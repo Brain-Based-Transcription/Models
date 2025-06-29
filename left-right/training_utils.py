@@ -23,13 +23,13 @@ class MetricsLogger(Callback):
                 self.val_metrics[metric].append(metric_value.item())
 
 
-def create_data_loaders(X_train, Y_train, batch_size=32, val_split=0.2):
+def create_data_loaders(X_train, Y_train, batch_size=32, val_split=0.2, loader_kwargs={}):
     """Create train and validation data loaders"""
     train_dataset = TensorDataset(X_train, Y_train)
     val_size = int(val_split * len(X_train))
     train_size = len(X_train) - val_size
     train_subset, val_subset = torch.utils.data.random_split(train_dataset, [train_size, val_size])
     
-    train_loader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
-    val_loader = DataLoader(val_subset, batch_size=batch_size, shuffle=False)
+    train_loader = DataLoader(train_subset, batch_size=batch_size, shuffle=True, **loader_kwargs)
+    val_loader = DataLoader(val_subset, batch_size=batch_size, shuffle=False, **loader_kwargs)
     return train_loader, val_loader

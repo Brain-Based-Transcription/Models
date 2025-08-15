@@ -3,9 +3,9 @@ import numpy as np
 
 
 def get_yuriy_data(samples_around=100):
-  X_1, Y_1, meta_data_1 = get_file('/Users/alejandro/watolink/Models/yuriy-data/FREEFORMSubjectC1512102StLRHand.mat', samples_around)
-  X_2, Y_2, _ = get_file('/Users/alejandro/watolink/Models/yuriy-data/FREEFORMSubjectC1512082StLRHand.mat', samples_around)
-  # X_3, Y_3, _ = get_file('/Users/alejandro/watolink/Models/yuriy-data/FREEFORMSubjectB1511112StLRHand.mat', samples_around)
+  X_1, Y_1, meta_data_1 = get_file('/Users/alejandro/VSCodeProjects/Models/yuriy-data/FREEFORMSubjectC1512102StLRHand.mat', samples_around)
+  X_2, Y_2, _ = get_file('/Users/alejandro/VSCodeProjects/Models/yuriy-data/FREEFORMSubjectC1512082StLRHand.mat', samples_around)
+  # X_3, Y_3, _ = get_file('/Users/alejandro/VSCodeProjects/Models/yuriy-data/FREEFORMSubjectB1511112StLRHand.mat', samples_around)
 
   X = np.concatenate([X_1, X_2])
   Y = np.concatenate([Y_1, Y_2])
